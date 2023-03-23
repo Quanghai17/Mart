@@ -204,8 +204,8 @@ Use paginate: $products->appends(request()->except(['page','_token']))->links()
                                                 <div class="ajaxcart__subtotal">
                                                 </div>
                                                 <div class="cart__btn-proceed-checkout-dt">
-                                                    <button style="    background-color: #eb3e32; color: aliceblue;" type="submit" class="button btn btn-default cart__btn-proceed-checkout" id="btn-proceed-checkout" onClick="location.href='{{ sc_route('cart') }}'">
-                                                    {{ sc_language_render('cart.back_to_cart') }} </button>
+                                                    <button style="    background-color: #eb3e32; color: aliceblue;" type="submit" class="button btn btn-default cart__btn-proceed-checkout" id="btn-proceed-checkout" >
+                                                    <a href="{{ sc_route('cart') }}">{{ sc_language_render('cart.back_to_cart') }}</a> </button>
                                                 </div>
                                             </div>
                                         </div>

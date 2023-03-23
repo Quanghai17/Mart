@@ -10,10 +10,10 @@
 						</h4>
 						<ul>
 							<li>Copyright@ 2021 Công ty cổ phần thương mại QH17 Mart</li>
-							<li>Chứng nhận ĐKKD số: 0388282938 do sở KH & ĐT TP.Hà Nội cấp</li>
-							<li>Địa chỉ: Tòa nhà Ladeco 266 Đội Cấn, Ba Đình, Hà Nội</li>
-							<li>Điện thoại: <a class="fone" href="tel:19006750">19006750</a>
-								- Email: <a href="mailto:support@sapo.vn">support@sapo.vn</a></li>
+							<li>Chứng nhận ĐKKD số: 0388282938 do sở KH & ĐT TP.Thái Nguyên cấp</li>
+							<li>Địa chỉ: {{ sc_store('address', ($storeId ?? null)) }}</li>
+							<li>Điện thoại: <a class="fone" href="tel:19006750">{{ sc_store('long_phone', ($storeId ?? null)) }}</a>
+								- Email: <a href="mailto:{{ sc_language_render('store.email') }}">{{ sc_language_render('store.email') }}</a></li>
 						</ul>
 					</div>
 					<div class="col-lg-6 col-12">
@@ -72,7 +72,7 @@
 					<div class="row tablet">
 						<div id="copyright" class="col-lg-6 col-md-6 col-12">
 							<div class="wsp">
-								Bản quyền thuộc về <a href="">Ego Creative</a>
+								Bản quyền thuộc về <a href="">QH17Mart</a>
 								<span class="opacity1">
 									Cung cấp bởi
 									<a href=""

@@ -94,8 +94,13 @@ Use paginate: $news->appends(request()->except(['page','_token']))->links()
 													<h5><a href="{{ $blog->getUrl() }}"
 															title="{{ $blog->title }}"
 															class="a-title">{{ $blog->title }}</a></h5>
-													<p>
-													{{ $blog->description }}
+													<p style=".line-clamp {
+														display: -webkit-box;
+														-webkit-line-clamp: 2;
+														-webkit-box-orient: vertical;  
+														overflow: hidden;
+													  }">
+													
 													</p>
 												</div>
 											</div>

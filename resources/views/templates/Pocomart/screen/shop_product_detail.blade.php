@@ -116,14 +116,14 @@ $countItem = 0
 
                 </div>
                 <div class="price-box clearfix">
-
+                
                   <span class="special-price">
-                    <span class="price product-price"> {!! $product->showPriceDetail() !!}</span>
+                    <span class="price product-price"> {!! $product->showPrice() !!}</span>
                   </span> <!-- Giá Khuyến mại -->
                   <span class="old-price">
                     Giá niêm yết:
                     <del class="price product-price-old">
-                    {!! $product->showPriceDetail() !!}
+                    {{$product->price}}
                     </del>
                   </span> <!-- Giá gốca -->
                   
@@ -134,12 +134,6 @@ $countItem = 0
                   <h2 class="title_km">
                     <span>Khuyến mãi - ưu đãi</span>
                   </h2>
-                  <div class="box-promotion">
-
-                    <p>Tặng ngay tai nghe iDot trị giá 1 triệu</p>
-                    <p>Tặng ốp lưng chống sốc</p>
-                    <p>Tặng phiếu mua hàng trị giá 2.000.000đ</p>
-                  </div>
                 </div>
               </div>
               <form enctype="multipart/form-data" id="add-to-cart-form" data-cart-form action="{{ sc_route('cart.add') }}" method="post" class="wishItem">
@@ -160,23 +154,7 @@ $countItem = 0
 
                       <button type="submit" data-role='addtocart' class="btn btn-lg btn-gray btn-cart btn_buy add_to_cart">Thêm vào
                         giỏ<span>Cam kết chính hãng / đổi trả 24h</span></button>
-                      <button type="submit" class="btn btn-lg btn-gray btn_buy btn-buy-now">Mua ngay<span>Thanh
-                          toán nhanh chóng</span></button>
-
                     </div>
-                  </div>
-                  <div class="product-wish">
-                    <div class="product-hotline">Gọi <a href="tel:{{ sc_store('long_phone', ($storeId ?? null)) }}" title="{{ sc_store('long_phone', ($storeId ?? null)) }}">{{ sc_store('long_phone', ($storeId ?? null)) }}</a> để tư vấn mua hàng</div>
-                    <a href="" class="setWishlist" data-wish="samsung-galaxy-s21-ultra" tabindex="0" title="Thêm vào yêu thích">
-                      <svg enable-background="new 0 0 412.735 412.735" version="1.1" viewBox="0 0 412.74 412.74" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m295.71 35.522c-34.43-0.184-67.161 14.937-89.339 41.273-22.039-26.516-54.861-41.68-89.339-41.273-64.633 0-117.03 52.395-117.03 117.03 0 110.76 193.31 218.91 201.14 223.09 3.162 2.113 7.286 2.113 10.449 0 7.837-4.18 201.14-110.76 201.14-223.09 0-64.633-52.396-117.03-117.03-117.03zm-89.339 319.22c-30.302-17.763-185.47-112.33-185.47-202.19 0-53.091 43.039-96.131 96.131-96.131 32.512-0.427 62.938 15.972 80.457 43.363 3.557 4.905 10.418 5.998 15.323 2.44 0.937-0.68 1.761-1.503 2.44-2.44 29.055-44.435 88.631-56.903 133.07-27.848 27.202 17.787 43.575 48.114 43.521 80.615 1e-3 90.907-155.17 184.95-185.47 202.19z" />
-                      </svg>
-                    </a>
-                    <a href="" class="setCompare btn-views" data-compare="samsung-galaxy-s21-ultra" data-type="Smartphone" tabindex="0" title="Thêm vào so sánh">
-                      <svg width="419pt" height="419pt" viewBox="0 -45 419.24 419" xmlns="http://www.w3.org/2000/svg">
-                        <path d="m359.08 102.91c1.4609 1.5391 3.4766 2.4375 5.6016 2.4844 2.125 0.050781 4.1797-0.75 5.7109-2.2227l46.414-44.898c1.5625-1.5117 2.4414-3.5938 2.4336-5.7656-0.003906-2.1758-0.89453-4.2539-2.4688-5.7539l-46.41-44.41c-3.1953-3.0547-8.2578-2.9414-11.312 0.25-1.4648 1.4922-2.2656 3.5156-2.2188 5.6055 0.046875 2.0898 0.9375 4.0742 2.4688 5.5l32.008 30.426h-64.273c-27.59 0.14453-53.539 13.133-70.191 35.137l-54.852 71.617-79.242-103.46c-1.4961-2.0156-3.8359-3.2305-6.3477-3.2891h-108.4c-4.418 0-8 3.582-8 8 0 4.418 3.582 8 8 8h104.45l79.449 104-79.449 104h-104.45c-4.418 0-8 3.582-8 8 0 4.418 3.582 8 8 8h108.4c2.5195-0.078125 4.8594-1.3086 6.3477-3.3359l79.242-103.41 54.812 71.617c16.66 22.012 42.625 35.004 70.23 35.133h64.273l-32.008 30.426c-2.3555 2.2344-3.1016 5.6875-1.8789 8.6992 1.2227 3.0078 4.1602 4.9648 7.4102 4.9258 2.0625-0.007813 4.043-0.8125 5.5312-2.2461l46.41-44.426c1.5742-1.5039 2.4648-3.5859 2.4688-5.7617 0.007813-2.1758-0.87109-4.2617-2.4336-5.7773l-46.414-44.91c-3.1758-3.0742-8.2422-2.9883-11.312 0.18359-3.0703 3.2539-2.9883 8.3633 0.1875 11.516l32.207 31.371h-64.441c-22.617-0.14062-43.875-10.816-57.5-28.875l-57.461-75.023 57.5-75.227c13.613-18.043 34.855-28.719 57.461-28.875h64.441l-32.207 31.371c-3.1758 3.1094-3.2578 8.1992-0.1875 11.414z" />
-                      </svg>
-                    </a>
                   </div>
                 </div>
               </form>
@@ -263,12 +241,12 @@ $countItem = 0
                 <div class="item swiper-slide">
                 @foreach ($productRelation as $key => $productRel)
                 <div class="item_product_main">
-                    <form action="https://pocomart.mysapo.net/cart/add" method="post" class="variants product-action wishItem" data-cart-form data-id="product-actions-21989403" enctype="multipart/form-data">
-                      <div class="product-thumbnail sale " >
+                    <form method="post" class="variants product-action wishItem" data-cart-form data-id="product-actions-21989403" enctype="multipart/form-data">
+                      <div class="product-thumbnail" >
                         <a class="image_thumb" href="samsung-galaxy-note-21.html" title="Samsung Galaxy Note 21">
                           <picture>
                             
-                            <img width="240" height="240" src="{{sc_file($productRel->getImage())}}" alt="Samsung Galaxy Note 21" class="lazyload img-responsive center-block" />
+                            <img src="{{sc_file($productRel->getImage())}}" alt="Samsung Galaxy Note 21" class="lazyload img-responsive center-block" />
                           </picture>
                         </a>
                         <div class="product-action">

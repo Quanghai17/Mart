@@ -41,7 +41,7 @@
                           
                   </td>
 
-                  <td>{!! $product->showPrice() !!}</td>
+                  <td>{!! $product->getFinalPrice() !!}</td>
 
                   <td class="cart-col-qty">
                       <div class="cart-qty">
