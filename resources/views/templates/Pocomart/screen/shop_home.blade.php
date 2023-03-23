@@ -123,7 +123,7 @@ $categories = $modelCategory
 												<div class="product-info">
 													<h3 class="product-name"><a href="{{ $product->getUrl() }}" title="Kệ gia vị nhà bếp hiện đại">{{$product->name}}</a></h3>
 													<div class="price-box">
-														{!! $product->showPrice() !!}
+														{!! $product->showPrice() !!} 
 														<div class="action-cart">
 															<input type="hidden" name="variantId" value="47547122" />
 															<button class="btn-buy btn-views add_to_cart " title="Mua ngay" onClick="addToCartAjax('{{ $product->id }}','default','{{ $product->store_id }}')">
